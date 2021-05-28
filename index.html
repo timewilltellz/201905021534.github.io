@@ -1,0 +1,749 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>杭州2022年亚运会宣传</title>
+    <style>
+    * {
+    margin: 0;
+    padding: 0;
+}
+
+.w {
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+body {
+    background-color: #faf6f6;
+}
+
+/* 清除浮动 */
+/* .clearfix:before,
+.clearfix:after {
+    content: "";
+    display: table;
+}
+
+.clearfix:after {
+    clear: both;
+}
+
+.clearfix {
+    *zoom: 1;
+} */
+
+
+
+/* 1 头部最上边 */
+header{
+    /* 因为要进行固定定位 */
+    position: fixed;
+    /* 防止这个盒子被其他定位盒子覆盖，提高优先级 */
+    z-index: 10; 
+    width: 1900px;
+    height: 100px;
+    /* background-color: #9910ff; */
+    background-color: #cb4f6f;
+
+    /* 定位的盒子居中对齐的方法 */
+    left: 50%;
+    margin-left:-850px;
+
+}
+
+/* 1.1logo */
+.logo{
+    float: left;
+    margin-left: 200px;
+    height: 100px;
+    width: 100px;
+    background-image: url("img/logo.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-color: #fff;
+}
+
+/* 1.2文字 */
+header .liter{
+   float: left;
+   margin-top: 30px;
+   margin-left: 20px;
+   color: white;
+}
+/* 运用了新增的属性 */
+header .liter :nth-child(1){
+    font-size: 26px;
+}
+
+
+
+/* 1.3导航搜索栏 */
+header .link{
+    float: left;
+    width: 880px;
+    height: 100px;
+}
+/* 1.3.1 搜索栏 */
+header .search{
+    width: 427px;
+    height: 42px;
+    margin-top: 10px;
+    margin-left: 620px;
+}
+header .search input{
+    float: left;
+    width: 220px;
+    height: 30px;
+
+    border-radius:20px;
+    border: 0;
+
+    color: #bfbfbf;
+}
+header .search button{
+    float: left;
+    width: 26px;
+    height: 26px;
+    background-image: url("img/图层162.png");
+    background-repeat: no-repeat;
+    border:0;
+    margin-top: 3px;
+    margin-left: 5px;
+}
+
+
+
+/* 1.3.2导航栏 */
+header .nav{
+    margin-left: 200px;
+    margin-top: 20px;
+}
+header .nav ul li{
+    float: left;
+   
+    list-style-type:none;
+
+    margin-left: 50px;
+}
+header .nav li a{
+    display: inline-block;
+    /* 水平居中 */
+    text-align: center;
+    color: white;
+
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+
+}
+header .nav li a:hover{
+    color: yellow;
+       border-bottom: 3px solid red;
+}
+
+
+
+
+
+
+/* 2中间背景 */
+.bc{
+    /* 子绝父相 */
+    position: relative;
+
+    width: 1300px;
+    height: 800px;
+    background-image: url("img/beijing.jpg");
+
+}
+/* 2.1左箭头 */
+.bc .zuo{
+    /* 子绝父相 */
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    left: 0;
+
+    background-color: rgba(0,0,0,0.3);
+    /* 文字水平和垂直居中 */
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+/* 2.2右箭头 */
+.bc .you{
+    /* 子绝父相 */
+    position: absolute;
+    width: 50px;
+    height: 50px;
+    top: 50%;
+    right: 0;
+
+    background-color: rgba(0,0,0,0.3);
+     /* 文字水平和垂直居中 */
+    line-height: 50px;
+    text-align: center;
+    color: white;
+    font-size: 30px;
+}
+
+
+
+
+/* 3赛事文化 */
+
+.culture{
+    width: 100%;
+    height: 1150px;
+    background-image: url("img/wenhuabeijingtu.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    margin-top: 168px;
+    /* 防止塌陷 */
+    overflow:hidden;
+
+}
+/* 3.1头部文字 */
+.culture .hd{
+    width: 1030px;
+    height: 50px;
+    /* background-color: wheat; */
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 68px;
+
+    font-size: 40px;
+    font-weight: 700;
+    color: black;
+    /* 文字水平和垂直居中 */
+    line-height: 50px;
+    text-align: center;
+}
+
+/* 1:3.1和3.2是标准流 2: 3.2中的小li脱标浮动  3：ul的宽度需要根据li来进行变化 4:因为是父盒子里面套子盒子需要考虑清除浮动的问题 5:悬浮运用了阴影和时间*/
+
+
+
+/* 3.2一系列介绍 */
+/* 系列的总盒子 */
+.culture .bd{
+    margin-top: 50px;
+
+
+}
+/* 系列的两个小盒子 */
+.culture .bd ul{
+    /* width需要根据li盒子的宽度来变 */
+    width: 1080px;
+    /* 让所有的li居中对齐 */
+    margin-left: auto;
+    margin-right: auto;
+    /* 因为bd这个父盒子没有设置宽度,所以要清除浮动 */
+    overflow: hidden;
+
+
+}
+.culture .bd li{
+
+    list-style-type: none;
+    float: left;
+
+    width: 500px;
+    height: 444px;
+    background-color:#ffffff;
+    margin-left: 30px;
+    margin-bottom: 50px;
+
+    /* 配套hover,慢慢浮现 */
+    transition: box-shadow .5s ease;
+    
+    
+}
+/* 3个小部分 */
+.bd ul li img{
+    margin-left: 46px;
+    width: 80%;
+    height: 60%;
+}
+.bd ul li span{
+    font-size: 30px;
+    color: red;
+}
+.bd ul li h4{
+    font-size: 15px;
+}
+/* 悬浮 */
+.bd li:hover {
+    box-shadow: 10px 10px 20px rgba(0, 0, 0, .3);
+}
+
+
+
+/* 4下相关新闻 */
+.news{
+    width: 100%;
+    height: 800px;
+    margin-top: 168px;
+    /* 防止塌陷 防止父盒子跟着子盒子跑*/
+    overflow:hidden;
+
+    background-color: #c7c8c6;
+    background-image: url("img/图层1.png");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+ 
+}
+.news .hd2{
+    width: 100%;
+    height: 50px;
+    /* background-color: black; */
+
+    color: black;
+    /* 文字水平和垂直居中 */
+    text-align: center;
+    line-height: 50px;
+    font-size: 40px;
+    font-weight: 700;
+    background-image: url("img/newsbeijing.png");
+}
+
+
+
+.news .bd2{
+    margin-top: 50px;
+}
+
+.news .bd2 ul{
+    width: 1450px;
+margin-left: auto;
+margin-right: auto;
+    overflow:hidden;
+
+}
+.news .bd2 ul li{
+    list-style-type: none;
+    float: left;
+
+    width: 400px;
+    height: 444px;
+    background-color: #ffffff;
+
+    margin-left: 50px;
+    margin-top: 50px;
+
+/* 不加bottom 悬浮效果不出来 */
+margin-bottom: 50px;
+        /* 配套hover,慢慢浮现 */
+        transition: box-shadow .5s ease;
+        border-radius: 30px;
+    
+    
+}
+/* 三个小部分 */
+.news .bd2 li h3{
+    background-color: #87ceeb;
+    height: 40px;
+    color: white;
+    text-align: center;
+    line-height: 40px;
+}
+.news .bd2 li h4{
+    margin-top: 10px;
+    text-align: center;
+}
+.news .bd2 li p{
+    margin-top: 6px;
+    /* 缩进 */
+    text-indent: 2em;
+}
+
+.bd2 li:hover {
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, .3);
+}
+
+
+
+/* 5相关照片 */
+.picture{
+    width: 100%;
+    height: 1200px;
+    margin-top: 168px;
+    /* 防止塌陷 防止父盒子跟着子盒子跑*/
+    overflow:hidden;
+}
+/* 5.1标题 */
+.picture .hd3{
+    width: 100%;
+    height: 50px;
+    /* background-color: black; */
+
+    color: black;
+    /* 文字水平和垂直居中 */
+    text-align: center;
+    line-height: 50px;
+    font-size: 40px;
+    font-weight: 700;
+    background-image: url("img/newsbeijing.png");
+}
+
+
+
+
+
+/* 5.2一系列 */
+.picture .bd3{
+    margin-top: 50px;
+}
+
+.picture ul{
+    width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+        overflow:hidden;
+
+}
+.picture ul li{
+    list-style-type: none;
+    float: left;
+    width: 300px;
+    height: 400px;
+
+    margin-left:50px ;
+    margin-top: 50px;
+}
+
+
+.bd3 ul li:nth-child(1){
+    background-image: url("img/xiangguanzhaop1.png");
+    background-size: 100% 100%;
+}
+.bd3 ul li:nth-child(2){
+    background-image: url("img/xiangguanzhaop2.png");
+    background-size: 100% 100%;
+}
+.bd3 ul li:nth-child(3){
+    background-image: url("img/xiangguanzhaop3.png");
+    background-size: 100% 100%;
+}
+.bd3 ul li:nth-child(4){
+    background-image: url("img/xiangguanbeijingzhaop4.jpg");
+    background-size: 100% 100%;
+}
+.bd3 ul li:nth-child(5){
+    background-image: url("img/xiangguanzhaopianbeij6.png");
+    background-size: 100% 100%;
+
+}
+.bd3 ul li:nth-child(6){
+    background-image: url("img/zhaopbeijing7.png");
+    background-size: 100% 100%;
+}
+.bd3 ul li:nth-child(7){
+    background-image: url("img/5.7.png");
+    background-size: 100% 100%;
+}
+.bd3 ul li:nth-child(8){
+    background-image: url("img/5.8.png");
+    background-size: 100% 100%;
+}
+.bd3 ul li:nth-child(9){
+    background-image: url("img/5.9.png");
+    background-size: 100% 100%;
+}
+.bd3 ul li:nth-child(10){
+    background-image: url("img/5.10.png");
+    background-size: 100% 100%;
+}
+.bd3 li:hover {
+    
+    box-shadow: 20px 20px 20px rgba(0, 0, 0, .3);
+}
+
+/* 6footer */
+/* 6.1左侧 */
+footer {
+    margin-top: 100px;
+    width: 100%;
+    height: 500px;
+    background-color: #cb4f6f;
+}
+.copyri{
+    float: left;
+    margin-left: 22px;
+}
+
+.copyri .im {
+    width: 150px;
+    height: 100px;
+    background-image: url("img/logo.png");
+    background-size: 100% 100%;
+    padding: 34px 0 27px 0;
+    margin-left: 200px;
+}
+.copyri p {
+    margin-top: 50px;
+    margin-left: 200px;
+    color: white;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+
+/* 6.2右侧 */
+.link2 {
+    float: right;
+    margin-right: 100px;
+    margin-top: 50px;
+}
+.link2 dl {
+    float: left;
+    margin-left: 100px;
+}
+.link2 dt{
+    font-size: 30px;
+}
+.link2 dd a{
+    display: block;
+    margin-top: 10px;
+    color: white;
+}
+
+
+/* 7置顶 */
+.top {
+    display: inline-block;
+    position: fixed;
+    right: 50px;
+    bottom: 100px;
+    height: 50px;
+    width: 50px;
+    background-image: url("img/zhdingtupian.jpg");
+    background-size: 100% 100%;
+}
+    </style>
+</head>
+<body>
+    <!-- 1头部最上边 -->
+    <header>
+        <!-- 1.1logo -->
+        <div class="logo"> 
+          
+        </div>
+
+        <!-- 1.2文字 -->
+        <div class="liter">
+            <span>杭州2022年第19届亚运会</span><br>
+            <span>The 19th Asian Games Hangzhou 2022</span>
+        </div>
+
+        <!-- 1.3搜索导航栏 -->
+        <div class="link">
+
+
+        <!-- 1.3.1搜索栏 -->
+        <div class="search">
+
+            <input type="text" value="  请输入查询内容">
+
+            <button></button>
+        </div>
+
+
+
+    <!-- 1.3.2导航栏 -->
+        <div class="nav">
+            <ul>
+                <li><a href="index1.html">首页</a></li>
+                <li><a href="shijueyayun.html">视觉亚运</a></li>
+                <li><a href="melihangzhou.html">美丽杭州</a></li>
+                <li><a href="#">历史赛事</a></li>
+                <li><a href="#">联系我们</a></li>
+            </ul>
+
+        </div>
+        </div>
+    </header>
+    
+
+    <!-- 2中间背景 -->
+    <article id="totop">
+            <div class="bc w">
+                <a href="#" class="zuo"><</a>
+                <a href="#" class="you">></a>
+            </div>
+    </article>
+
+
+    <!-- 3中下文字 -->
+    <article>
+        <div class="culture w">
+
+            <!-- 3.1标题 -->
+            <p class="hd">赛事文化</p>
+
+            <!-- 3.2一系列 -->
+            <div class="bd">
+                <ul>
+                    <li>
+                        <img src="img/logo.png" alt="">
+                        <h4><span>会徽:</span> 杭州2022年第19届亚运会会徽"潮涌"的主体图形由扇面、钱塘江、钱江潮头、赛道、互联网符号及象征亚奥理事会的太阳图形六个元素组成，下方是主办城市名称与举办年份的印鉴，两者共同构成了完整的杭州亚运会会徽。扇面造型反映江南人文意蕴，赛道代表体育竞技，互联网符号契合杭州城市特色，太阳图形是亚奥理事会的象征符号。钱塘江和钱江潮头是会徽的形象核心，绿水青山展示了浙江杭州山水城市的自然特征，江潮奔涌表达了浙江儿女勇立潮头的精神气质，整个会徽形象象征着新时代中国特色社会主义大潮的涌动和发展</h4>
+                    </li>
+                    <li>
+                        <img src="img/jixiangwu.jpg" alt="">
+                        <h4> <span>吉祥物:</span>杭州2022年第19届亚运会吉祥物正式向全球发布，杭州亚运会吉祥物组合“江南忆”在互联网云端与网友们见面，三个机器人造型的吉祥物分别是琮琮、莲莲和宸宸，以机器人的造型代表世界遗产良渚古城遗址，名字源于良渚古城遗址出土的代表性文物玉琮。“莲莲”以机器人的造型代表世界遗产西湖，名字源于西湖中无穷碧色的接天莲叶。“宸宸”以机器人的造型代表世界遗产京杭大运河，名字源于京杭大运河杭州段的标志性建筑拱宸桥。</h4>
+
+                    </li>
+                    <li>
+                        <img src="img/kouhao.jpg" alt="">
+                        <h4><span>主题口号</span>“我们把这句口号念作‘心心相融，爱达未来’。”陈卫强说，“主题口号意在表达各国人民在亚运会大舞台上用心交融，互相包容，体现亚奥理事会大家庭团结向上、紧密相拥的理想，同时传递自信乐观、不畏挑战、共迎美好的期许，与‘永远向前’以及‘更快、更高、更强’的奥林匹克精神契合一致，也寄托着面向未来，共建亚洲和人类命运共同体的良好愿望。</h4>
+                    </li>
+                    <li>
+                        <img src="img/youpiao.jpg" alt="">
+                        <h4><span>纪念邮票</span>杭州亚运会首套个性化专用邮票在杭州西湖涌金公园正式发布，此次发行的个性化专用邮票为1套1枚，另发行小本票1本。邮票主图以杭州亚运会会徽为主，用印银的线条和面值文字加以装饰，使画面更显整体。附图以杭州亚运会主场馆为主，以钱塘江沿岸建筑做陪衬，蓝绿底色寓意浙江的青山绿水，运动感十足的水波纹象征了浙江元素。此套邮票也是面向全国发行的首套搭载AR技术的个性化专用邮票</h4>
+                    </li>
+
+
+                </ul>
+            </div>
+
+        </div>
+
+    </article>
+
+
+
+    <!-- 4相关新闻 -->
+    <article>
+        <div class="news w">
+
+            <!-- 4.1标题 -->
+            <p class="hd2">相关新闻</p>
+
+            <!-- 4.1一系列 -->
+            <div class="bd2">
+                <ul>
+                    <li>
+                        <h3>杭州亚运会志愿者报名赛时服务类问来了</h3>
+                        <h4>何时开展杭州亚运会和亚残运会赛会志愿服务？ <br></h4>
+                        <p> 杭州亚运会的举办时间是2022年9月10日至25日，亚残运会的举办时间是2022年10月9日至15日。赛会志愿者上岗时间一般为赛前7天至赛后3天，具体服务时间将根据各志愿服务岗位的要求而定 </p>
+
+                        <h4>杭州亚运会和亚残运会赛会志愿者的服务地点在哪里？ </h4>
+                        <p>赛会志愿者服务地点分别在中国浙江杭州赛区、宁波赛区、温州赛区、金华赛区、湖州赛区、绍兴赛区的竞赛场馆、独立训练场馆及亚运村、主运行中心、媒体中心等非竞赛场馆。 </p>
+                
+                        <h4>杭州亚运会和亚残运会赛会志愿者的服务对象包括哪？</h4>
+                        <p>赛会志愿者服务对象主要包括：OCA/APC大家庭成员和贵宾、运动员和随队官员、国际单项体育协会与技术官员、新闻媒体、持权转播商、市场合作伙伴、观众等。</p>
+                    </li>
+                    <li>
+                        <h3>掀起绍兴亚运筹办的“蝴蝶效应”</h3>
+                        <h4>冲刺“基本具备办赛条件”目标</h4>
+                        <p>绍兴是除杭州外承办亚运竞赛项目最多的城市，涉及篮球、排球、棒球、垒球、攀岩5个项目相关赛事和足球训练项目。<br>
+                            　　杭州亚运会、亚残运会57个竞赛场馆中，绍兴奥体中心体育馆承担篮球项目比赛，中国轻纺城体育中心体育馆承担排球项目比赛，绍兴羊山攀岩中心承担攀岩项目比赛，绍兴棒垒球体育文化中心承担棒球和垒球项目比赛。此外，柯桥鉴湖足球场需承担赛时足球项目的训练任务。<br>                           
+                            　　目前，绍兴市奥体中心已于2020年底完成改造，是全省最早完工的亚运场馆之一。柯桥轻纺城体育中心目前也已完成竣工验收。未来，绍兴市棒垒球体育文化中心、柯桥区羊山攀岩中心、鉴湖足球场三个在建场馆预计于今年10月全部完工。</p>
+                
+                    </li>
+                    <li>
+                        <h3>杭师大亚运筹办工作展现市属高校一流形象</h3>
+                        <h4>为一流，争一流</h4>
+                        <p>初夏的校园，和风微醺，花香宜人。<br>
+                            　　近万平米的体育场上，茵茵绿草，柔软如毯，静候着即将到来属于它的激情狂欢。这里，是杭州亚运会7人制橄榄球比赛的决赛场地。<br>                           
+                            　　不远处的体育馆内，8033个座席环绕四周，蓝、黄、灰、橙的色彩搭配彰显出了校园的青春活力。观众无论身处哪个角落，都能将赛场尽收眼底。477天后，中国人最喜爱的排球项目，将在这里迎来激烈PK。<br>
+                            杭师大体育场将承担杭州亚运会橄榄球项目。体育场提升改造工程于2020年12月30日通过竣工验收，是杭州亚运会、亚残运会57个竞赛场馆中第一个通过竣工验收的场馆。<br>
+                            　　草坪是橄榄球项目的核心，体育场改造提升“发力”最多的就是草坪改造。蓝天白云下，绿草长势正好，这主要归功于地下“看不见”的3层“生态结构”：透水层、基层、面层。</p>
+            
+                    </li>
+                </ul>
+            </div>
+
+
+        </div>
+    </article>
+
+
+
+
+    <!-- 5相关照片 -->
+    <article>
+        <div class="picture">
+            <!-- 5.1标题 -->
+            <p class="hd3">
+                相关照片
+            </p>
+            <!-- 5.2一系列 -->
+            <div class="bd3">
+            <ul>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+                <li></li>
+            </ul>
+        </div>
+
+        </div>
+    </article>
+
+    <!-- 6最底部 -->
+    <footer>
+        <div class="copyri">
+
+            <div  class="im"> </div>
+            <p>2022年第19届亚运会组委会<br>
+
+                中国浙江省杭州市上城区富春路150号昆仑中心B座<br>
+                
+                邮编：310016 <br>
+                
+                邮箱：275730624@qq.com。<br></p>
+         
+        
+
+        </div>
+
+            <div class="link2">
+                <dl>
+                    <dt>相关链接</dt>
+                    <dd><a href="#">国家体育总局</a></dd>
+                    <dd><a href="#">国际奥委会</a></dd>
+                    <dd><a href="#">亚奥理事会</a></dd>
+                    <dd><a href="#">中国奥委会</a></dd>
+                    <dd><a href="#">北京2022年冬奥会和冬残奥会组委会</a></dd>
+                </dl>
+                <dl>
+                    <dt>历届赛事</dt>
+                    <dd><a href="#">第十八届2018年雅加达亚运会</a></dd>
+                    <dd><a href="#">第十七届2014年仁川亚运会</a></dd>
+                    <dd><a href="#">第十六届2010年广州亚运会</a></dd>
+                    <dd><a href="#">第十五届2006年多哈亚运会</a></dd>
+                </dl>
+                <dl>
+                    <dt>关于本站</dt>
+                    <dd><a href="#">关于</a></dd>
+                    <dd><a href="#">管理团队</a></dd>
+                    <dd><a href="#">工作机会</a></dd>
+                    <dd><a href="#">客户服务</a></dd>
+                    <dd><a href="#">帮助</a></dd>
+                </dl>
+            </div>
+        
+    </footer>
+
+    <!-- 7返回按钮 -->
+    <a href="#totop" class="top"></a>
+
+</body>
+</html>
